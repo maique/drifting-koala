@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Inter via Bunny -->
+  <!-- Space Grotesk via Bunny -->
   <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=inter:400,500,600" rel="stylesheet">
+  <link href="https://fonts.bunny.net/css?family=space-grotesk:400,500,600,700" rel="stylesheet">
 
   <!-- Uchu color system -->
   <link href="https://uchu.style/color.css" rel="stylesheet"/>
@@ -24,15 +24,15 @@
 	:root {
 	  /* light mode (default) */
 	  --bg: var(--uchu-yang);
-	  --fg: var(--uchu-yin);
-	  --muted: var(--uchu-gray);
+	  --fg: var(--uchu-yellow);
+	  --muted: var(--uchu-light-blue);
 	}
 
 	@media (prefers-color-scheme: dark) {
 	  :root {
 		--bg: var(--uchu-yin);
-		--fg: var(--uchu-tang);
-		--muted: var(--uchu-light-yin);
+		--fg: var(--uchu-yellow);
+		--muted: var(--uchu-blue);
 	  }
 	}
 
@@ -47,7 +47,7 @@
 	}
 
 	body {
-	  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+	  font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 	  -webkit-font-smoothing: antialiased;
 	  text-rendering: optimizeLegibility;
 	}
@@ -57,6 +57,11 @@
 	  min-height: 100svh;
 	  padding-left: clamp(24px, 6vw, 96px);
 	  padding-right: clamp(24px, 6vw, 96px);
+	}
+
+	@keyframes float {
+	  0%, 100% { transform: translateY(0); }
+	  50% { transform: translateY(-12px); }
 	}
 
 	.hero h1 {
@@ -70,6 +75,15 @@
 	  font-size: clamp(6rem, 18vw, 20rem);
 	  letter-spacing: -0.045em;
 	  user-select: none;
+	  color: var(--fg);
+
+	  animation: float 4s ease-in-out infinite;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+	  .hero h1 {
+		animation: none;
+	  }
 	}
 
 	/* Footer-like label */
