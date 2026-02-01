@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Inter via Bunny -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=inter:400,500,600" rel="stylesheet">
+
+  <!-- Uchu color system -->
+  <link href="https://uchu.style/color.css" rel="stylesheet"/>
+
+  <!-- stats script untouched -->
+  <script src="https://neatstats.net/view.js"></script>
+
+  <title>drifting-koala</title>
+
+  <style>
+	/* =========================================================
+	   Color tokens (placeholders – you’ll tune later)
+	   ========================================================= */
+
+	:root {
+	  /* light mode (default) */
+	  --bg: var(--uchu-yang);
+	  --fg: var(--uchu-yin);
+	  --muted: var(--uchu-gray);
+	}
+
+	@media (prefers-color-scheme: dark) {
+	  :root {
+		--bg: var(--uchu-yin);
+		--fg: var(--uchu-tang);
+		--muted: var(--uchu-light-yin);
+	  }
+	}
+
+	/* ========================================================= */
+
+	html, body {
+	  margin: 0;
+	  padding: 0;
+	  height: 100%;
+	  background: var(--bg);
+	  color: var(--fg);
+	}
+
+	body {
+	  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+	  -webkit-font-smoothing: antialiased;
+	  text-rendering: optimizeLegibility;
+	}
+
+	.hero {
+	  position: relative;
+	  min-height: 100svh;
+	  padding-left: clamp(24px, 6vw, 96px);
+	  padding-right: clamp(24px, 6vw, 96px);
+	}
+
+	.hero h1 {
+	  margin: 0;
+	  padding-top: 22svh; /* Apple hero move */
+	  text-align: center;
+
+	  font-weight: 500;
+	  line-height: 0.95;
+	  white-space: nowrap;
+	  font-size: clamp(6rem, 18vw, 20rem);
+	  letter-spacing: -0.045em;
+	  user-select: none;
+	}
+
+	/* Footer-like label */
+	.hero p {
+	  position: absolute;
+	  bottom: clamp(24px, 6vh, 72px);
+	  left: 50%;
+	  transform: translateX(-50%);
+
+	  margin: 0;
+	  font-size: 0.8rem;
+	  font-weight: 500;
+	  letter-spacing: 0.14em;
+	  text-transform: lowercase;
+	  white-space: nowrap;
+
+	  color: var(--muted);
+	}
+  </style>
+</head>
+
+<body>
+  <main class="hero">
+	<h1>ʕ ꈍᴥꈍʔ</h1>
+	<p>drifting-koala</p>
+  </main>
+</body>
+</html>
