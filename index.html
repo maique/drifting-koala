@@ -32,7 +32,7 @@
 	  :root {
 		--bg: var(--uchu-yin);
 		--fg: var(--uchu-yellow);
-		--muted: var(--uchu-blue);
+		--muted: var(--uchu-light-blue);
 	  }
 	}
 
@@ -55,41 +55,29 @@
 	.hero {
 	  position: relative;
 	  min-height: 100svh;
-	  padding-left: clamp(24px, 6vw, 96px);
-	  padding-right: clamp(24px, 6vw, 96px);
-	}
-
-	@keyframes float {
-	  0%, 100% { transform: translateY(0); }
-	  50% { transform: translateY(-12px); }
+	  padding-left: clamp(12px, 3vw, 48px);
+	  padding-right: clamp(12px, 3vw, 48px);
+	  overflow: hidden;
 	}
 
 	.hero h1 {
 	  margin: 0;
-	  padding-top: 22svh; /* Apple hero move */
+	  padding-top: 18svh;
 	  text-align: center;
 
 	  font-weight: 500;
 	  line-height: 0.95;
 	  white-space: nowrap;
-	  font-size: clamp(6rem, 18vw, 20rem);
+	  font-size: clamp(8rem, 24vw, 28rem);
 	  letter-spacing: -0.045em;
 	  user-select: none;
 	  color: var(--fg);
-
-	  animation: float 4s ease-in-out infinite;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-	  .hero h1 {
-		animation: none;
-	  }
 	}
 
 	/* Footer-like label */
 	.hero p {
 	  position: absolute;
-	  bottom: clamp(24px, 6vh, 72px);
+	  bottom: clamp(120px, 30vh, 320px);
 	  left: 50%;
 	  transform: translateX(-50%);
 
